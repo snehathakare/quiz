@@ -1,0 +1,14 @@
+<h1>Category name:</h1>
+<% @category.each do |cat| %>
+    <tr>
+      <td><%= cat.title %></td>
+    </tr>
+    <tr>
+      <td><%= cat.description %></td>
+    </tr>
+  <% end %>
+
+  <div><h2>Category description</h2></div>
+  <div><h5>Difficulty level</h5></div>
+  <div><h5>Sample Questions</h5></div>
+ 

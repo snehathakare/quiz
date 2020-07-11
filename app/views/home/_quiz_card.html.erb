@@ -4,8 +4,12 @@
       <div class="card-body">
         <h5 class="card-title">K-Pop</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Take Quiz</a>
-        <a href="#" class="card-link">View</a>
+        <div>
+        <%= button_tag 'Take Quiz', class: "btn btn-success", data: { toggle: 'modal', target: '#buyModal' } %>
+        </div>
+        <%= render partial: '/category/category_modal' %>
+        <!-- BS JavaScript -->
+        <script type="text/javascript" src="js/bootstrap.js"></script>
       </div>
     </div>
   </div> 
@@ -72,49 +76,6 @@
       </div>
     </div>
   </div>  
-  <div class="col-md-3">  
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Sports</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Take Quiz</a>
-        <a href="#" class="card-link">View</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-3">
-      <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">K-Pop</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Take Quiz</a>
-        <a href="#" class="card-link">View</a>
-      </div>
-    </div>
-  </div> 
-  <div class="col-md-3">  
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Netflix Quiz</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Take Quiz</a>
-        <a href="#" class="card-link">View</a>
-      </div>
-    </div>
-  </div> 
-  <div class="col-md-3">
-      <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">K-Pop</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Take Quiz</a>
-        <a href="#" class="card-link">View</a>
-      </div>
-    </div>
-  </div> 
   <div class="col-md-3">  
     <div class="card" style="width: 18rem;">
       <div class="card-body">
