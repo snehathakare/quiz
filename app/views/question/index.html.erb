@@ -6,8 +6,29 @@
   </div>
 </div>
 
-<p class="lead">Question list</p>
-<span class="lead">options</span>
-<span class="lead">options</span>
-<span class="lead">options</span>
-<span class="lead">options</span>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">Question list</p>
+    <span class="lead">options</span>
+    <span class="lead">options</span>
+    <span class="lead">options</span>
+    <span class="lead">options</span>
+  </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">Play More!</p>
+    <span class="lead">Quiz Cards</span>
+    <span class="lead">Quiz Cards</span>
+    <span class="lead">Quiz Cards</span>
+    <span class="lead">Quiz Cards</span>
+  </div>
+</div>
+
+
+<ul>
+  <% @questions.each do |questions| %>
+    <li><%= questions.title %></li>
+  <% end %>
+</ul>
