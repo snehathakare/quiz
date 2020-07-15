@@ -1,6 +1,6 @@
 class QuestionController < ApplicationController
   def index
-    @questions = Question.all
+    @questions = category.questions
   end
 
   def show
@@ -12,5 +12,8 @@ private
     params.require(:question).permit(:diffculty, :title)
   end
 
+  def category
+    @category ||= Category.find(params[:category_id])
+  end
 
 end
