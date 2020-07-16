@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  get 'answers/index'
   devise_for :users
   root "home#index"
 
-  resources :category do
-    resources :question
+  resources :categories do
+    resources :questions
   end
 end
