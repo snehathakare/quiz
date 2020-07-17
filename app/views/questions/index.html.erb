@@ -1,26 +1,29 @@
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid" id="cat_display">
   <div class="container">
-    <h3 class="card-title"><%= @category.title %></h3>
-    <p class="lead"><%= @category.description %></p>
+    <h5><strong>| QUIZ |</strong></h5>
+    <h3 class="card-title display-4"><strong><%= @category.title %></strong></h3>
+    <p class="lead"><strong><em><%= @category.description %></em></strong></p>
   </div>
 </div>
 
 <div class="jumbotron jumbotron-fluid">
+
   <div class="container">
-    <ul>
-      <% @questions.each do |questions| %>
-        <li><%= questions.title %>
-          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group mr-2" role="group" aria-label="First group">
-              <% questions.answers.each do |ans| %>
+    <h2>START NOW!</h2>
+    <% @questions.each do |questions| %>
+      <div class="question"><strong><%= questions.title %></strong>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group mr-2" role="group">
+            <% questions.answers.each do |ans| %>
+              <span id="btn-answer">
                 <button type="button" class="btn btn-secondary"><%= ans.title %></button>
-              <% end %>
-            </div>
-          </div>   
-        </li>
-      <% end %>
-    </ul>
-  <button class="btn btn-primary" id="btn-answer">Submit</button>
+              </span>
+            <% end %>
+          </div>
+        </div>   
+      </div>
+    <% end %>
+  <button class="btn btn-success" id="btn-answer">Submit</button>
   </div>
 </div>
 

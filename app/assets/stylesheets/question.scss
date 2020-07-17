@@ -1,3 +1,25 @@
 // Place all the styles related to the Question controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+#cat_display {
+  background-color: orange;
+  margin-bottom: 0;
+}
+
+#btn-answer {
+  margin-right: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.question {
+  margin-bottom: 50px;
+}
+
+.btn-group {
+  margin-top: 20px;
+}

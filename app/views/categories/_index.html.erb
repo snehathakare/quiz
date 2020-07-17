@@ -1,17 +1,19 @@
- <div class="row">
-  <div class="col-md-3">
-        <% category.each do |category| %>
-          <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title"><%= category.title %></h5>
-            <p class="card-text"><%= category.description %></p>
-            <div>
-            <%= button_tag 'Take Quiz', class: "btn btn-success", data: { toggle: 'modal', target: '#buyModal' } %>
-            </div>
-            <%= render partial: '/categories/category_modal' %>
-            <!-- BS JavaScript -->
-            <script type="text/javascript" src="js/bootstrap.js"></script>
+ 
+
+  <% category.each do |category| %>
+ <div class="card-deck"> 
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= category.title %></h5>
+          <p class="card-text"><%= category.description %></p>
+          <div>
+          <%= button_tag 'Take Quiz', class: "btn btn-success", data: { toggle: 'modal', target: '#buyModal' } %>
           </div>
-        <% end %>
-  </div>
-</div>
+          <%= render partial: '/categories/category_modal' %>
+          <!-- BS JavaScript -->
+          <script type="text/javascript" src="js/bootstrap.js"></script>
+        </div>     
+   </div>
+
+<% end %>
+ 
