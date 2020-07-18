@@ -8,10 +8,12 @@ namespace :import_ans do
     csv_text = File.read(Rails.root.join("lib", "csvs", "answers.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     csv.each do |row|
+      question = Question.find_by(question_number: row["question_number"])
       a = Answer.new
       a.correct = row["correct"]
-      a.title= row["title"]
-      a.question_id= row["question_id"]
+      a.title = row["title"]
+      a.question_id = question.id
+      a.question_number = row["question_number"]
       a.save!
     end     
     puts "There are now #{Answer.count} rows in the answers table"
