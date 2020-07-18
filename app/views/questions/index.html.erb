@@ -10,20 +10,26 @@
 
   <div class="container">
     <h2>START NOW!</h2>
-    <% @questions.each do |questions| %>
-      <div class="question"><strong><%= questions.title %></strong>
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-          <div class="btn-group mr-2" role="group">
-            <% questions.answers.each do |ans| %>
-              <span id="btn-answer">
-                <button type="button" class="btn btn-secondary"><%= ans.title %></button>
-              </span>
-            <% end %>
+    <%= form_with model: @answer_sheet do |f| %>
+      <%= f.hidden_field :user_id %>
+      <%= f.fields :answers do |field| %>
+        <% @questions.each do |questions| %>
+          <div class="question"><strong><%= questions.title %></strong>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group mr-2" role="group">
+                <% questions.answers.each do |ans| %>
+                  <span id="btn-answer">
+                    <%= field.radio_button :"question_id_#{questions.id}", ans.id %>
+                    <%= field.label :"question_id_#{questions.id}", ans.title, class: "btn btn-secondary" %>
+                  </span>
+                <% end %>
+              </div>
+            </div>   
           </div>
-        </div>   
-      </div>
+        <% end %>
+      <% end %>
+      <%= f.submit "Submit", class: "btn btn-success" %>
     <% end %>
-  <button class="btn btn-success" id="btn-answer">Submit</button>
   </div>
 </div>
 
